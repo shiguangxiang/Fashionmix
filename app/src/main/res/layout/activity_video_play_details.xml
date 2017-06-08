@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="post"
+            type="com.kuaimeizhuang.fashionmix.bean.Post"/>
+
+        <variable
+            name="viewModel"
+            type="com.kuaimeizhuang.fashionmix.model.home.VideoPlayDetailsViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:minHeight="102dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <com.kuaimeizhuang.fashionmix.view.VideoPlayView
+                android:id="@+id/video_play"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
+
+            <LinearLayout
+                android:id="@+id/rl_zan_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="40dp"
+                android:paddingRight="20dp"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/iv_video_detail_zan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_video_detail_zan"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:id="@+id/tv_video_detail_zan_text"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/zan_backgroud"
+                    android:gravity="center"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <com.kuaimeizhuang.fashionmix.view.FavorLayout
+                android:id="@+id/fl_favor"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:minHeight="202dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/iv_user_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="韩系"
+                    android:textColor="@color/kmz_3e3e3e"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/iv_channel_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_item"
+            android:layout_width="match_parent"
+            android:layout_height="0.1px"
+            android:background="@color/kmz_ededed"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_tag"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_item_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/kmz_dedede"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/iv_points_value"/>
+
+            <TextView
+                android:id="@+id/tv_comments_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@{String.valueOf(post.comments_count)+@string/people}"
+                android:textColor="@color/red_tao"
+                android:textSize="14sp"
+                tools:text="124"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="参与评论"
+                android:textColor="@color/kmz_7c7c7c"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <com.kuaimeizhuang.fashionmix.view.LoadMoreRecyclerView
+            android:id="@+id/recycler_load_more"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:id="@+id/ll_pub_comment_container"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="#f7f7f7"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_pub_comment_content"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1"
+                android:addTextChangedListener="@{viewModel.textWatcher}"
+                android:background="@drawable/btn_circle_shape"
+                android:enabled="@{!viewModel.commentSending}"
+                android:hint="@{viewModel.commentPrefix}"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:scrollbars="vertical"
+                android:text="@{viewModel.commentContent}"
+                android:textSize="14sp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_btn_send_container"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp">
+
+                <Button
+                    android:id="@+id/btn_send_comment"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/iv_send_bg"
+                    android:text="发送"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="@{viewModel.commentSending?View.INVISIBLE:View.VISIBLE}"/>
+
+                <ProgressBar
+                    android:id="@+id/pb_send_comment"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/red_tao"
+                    android:indeterminateTintMode="src_atop"
+                    android:visibility="@{viewModel.commentSending?View.VISIBLE:View.GONE}"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

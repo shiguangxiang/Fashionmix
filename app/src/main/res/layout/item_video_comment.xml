@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="com.kuaimeizhuang.fashionmix.utils.UiUtils"/>
+
+        <import type="com.kuaimeizhuang.fashionmix.utils.TimeFormatUtil"/>
+
+        <variable
+            name="comment"
+            type="com.kuaimeizhuang.fashionmix.bean.Comment"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/loading_head_153_153"
+                    app:circleImageUrl="@{comment.author.avatar_url}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{comment.author.nickname}"
+                        android:textColor="@color/red_tao"
+                        android:textSize="13sp"
+                        tools:text="name"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="@{comment.author.level_name}"
+                            android:textColor="@color/kmz_3e3e3e"
+                            android:textSize="10sp"
+                            tools:text="rank"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="@{TimeFormatUtil.getStandardDate(comment.created_at)}"
+                            android:textColor="@color/kmz_898989"
+                            android:textSize="9sp"
+                            tools:text="1个小时前"/>
+
+                        <ImageView
+                            android:id="@+id/iv_del_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:src="@drawable/iv_delete_grey"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_vertical"
+                        android:text="@{comment.content}"
+                        android:textColor="@color/kmz_3e3e3e"
+                        android:textSize="15sp"
+                        tools:text="评论Content"/>
+
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="9dp"
+                        android:layout_marginBottom="-0.5dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/iv_child_comment_bg"
+                        android:visibility="@{comment.children_comments.size()>0?View.VISIBLE:View.GONE}"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_comment_child"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/kmz_f1f1f1"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/kmz_c1c1c1"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffff</color>
+    <color name="org">#931111</color>
+
+
+
+    <color name="red_tao">#8a5599</color>
+    <color name="kmz_909090">#909090</color>
+    <color name="dark_red_tao">#66f36c97</color>
+    <color name="light_red_tao">#44f36c97</color>
+    <color name="kmz_f5f9fc">#efeff4</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="light_white">#88ffffff</color>
+    <color name="attention">#ffffcc00</color>
+    <color name="kmz_eff0f5">#eff0f5</color>
+    <color name="kmz_6da83c">#6da83c</color>
+    <color name="kmz_84c341">#84c341</color>
+    <color name="kmz_7c7c7c">#7c7c7c</color>
+    <color name="kmz_f1f1f1">#f1f1f1</color>
+    <color name="kmz_f5f5f5">#f5f5f5</color>
+    <color name="kmz_f76299">#f76299</color>
+    <color name="kmz_fba0c1">#fba0c1</color>
+    <color name="kmz_feb4b4">#feb4b4</color>
+    <color name="kmz_eeeeee">#eeeeee</color>
+    <color name="kmz_efefef">#efefef</color>
+    <color name="kmz_ededed">#ededed</color>
+    <color name="kmz_dedede">#dedede</color>
+    <color name="kmz_c6c6c6">#c6c6c6</color>
+    <color name="kmz_cccccc">#cccccc</color>
+    <color name="kmz_c1c1c1">#c1c1c1</color>
+    <color name="kmz_b1b1b1">#b1b1b1</color>
+    <color name="kmz_aaaaaa">#aaaaaa</color>
+    <color name="kmz_8f8f8f">#8F8F8F</color>
+    <color name="kmz_8d8d8d">#8d8d8d</color>
+    <color name="kmz_898989">#898989</color>
+    <color name="kmz_896c32">#896c32</color>
+    <color name="kmz_7b7b7b">#7b7b7b</color>
+    <color name="kmz_666666">#666666</color>
+    <color name="kmz_6f6f6f">#6f6f6f</color>
+    <color name="kmz_575757">#575757</color>
+    <color name="kmz_3e3e3e">#3e3e3e</color>
+    <color name="kmz_f36c97">#f36c97</color>
+    <color name="kmz_f86198">#f86198</color>
+    <color name="kmz_dacbe8">#dacbe8</color>
+
+    <color name="selecotr_color">#4D969696</color>
+
+    <color name="kmz_88575757">#88575757</color>
+
+
+    <color name="random_b488d3">#b488d3</color>
+    <color name="random_98c465">#98c465</color>
+    <color name="random_da9e86">#da9e86</color>
+    <color name="random_737373">#cc737373</color>
+
+    <color name="shadow">#cc222222</color>
+
+
+
+    <color name="darkgray">#404040ff</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#0ff0ff</color>
+    <color name="lightgray">#c0c0c0ff</color>
+    <color name="yellow">#ffFF33ff</color>
+    <color name="gray">#ff666666</color>
+    <color name="magenta">#ff6699ff</color>
+    <color name="cyan">#66ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black">#ff000000</color>
+    <color name="background_dark">#f0f0f0</color>
+    <color name="camera_bg">#2c2c2c</color>
+    <color name="camera_progress">#2980B9</color>
+    <color name="camera_progress_split">#005084</color>
+    <color name="camera_progress_three">#24ff00</color>
+    <color name="camera_progress_overflow">#1b5d89</color>
+    <color name="camera_theme_selected_bgcolor">#2980B9</color>
+</resources>

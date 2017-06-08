@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/feedback_bg"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/edt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="有任何要吐槽的，就在这里尽情发挥吧~"
+                android:textColor="@color/kmz_3e3e3e"
+                android:textColorHint="@color/kmz_898989"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/feedback_bg"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/edt_qq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="QQ:"
+                android:textColor="@color/kmz_3e3e3e"
+                android:textColorHint="@color/kmz_898989"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="QQ号只是为了方便联系您，官方不会泄露您的QQ号"
+            android:textColor="@color/kmz_898989"
+            android:textSize="13sp"/>
+
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_red_selector"
+            android:gravity="center"
+            android:text="@string/btn_commit_feedback"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+</layout>

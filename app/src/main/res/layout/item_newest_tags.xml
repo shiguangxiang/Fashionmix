@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_tags"
+        android:layout_width="match_parent"
+        android:background="@color/kmz_ededed"
+        android:layout_height="wrap_content"/>
+</layout>

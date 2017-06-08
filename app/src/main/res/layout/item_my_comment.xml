@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="message"
+            type="com.kuaimeizhuang.fashionmix.bean.Message"/>
+
+        <import type="com.kuaimeizhuang.fashionmix.utils.TimeFormatUtil"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="@color/white"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_comment_head"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/loading_head_153_153"
+            app:circleImageUrl="@{message.other_user.avatar_url}"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/iv_comment_head"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{message.other_user.nickname}"
+                android:textColor="@color/red_tao"
+                android:textSize="14sp"
+                tools:text="葡萄君"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{message.content}"
+                android:textColor="@color/kmz_3e3e3e"
+                android:textSize="14sp"
+                tools:text="王后美乐乐"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="@{TimeFormatUtil.getStandardDate(message.created_at)}"
+            android:textSize="10sp"
+            tools:text="一天前"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/kmz_ededed"
+            android:layout_height="10dp"/>
+    </RelativeLayout>
+</layout>

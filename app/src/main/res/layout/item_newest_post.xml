@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="post"
+            type="com.kuaimeizhuang.fashionmix.bean.Post"/>
+
+        <import type="com.kuaimeizhuang.fashionmix.utils.TimeFormatUtil"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/btn_reccom_tag"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@color/kmz_ededed">
+
+            <ImageView
+                android:id="@+id/iv_data_recommened"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingTop="16dp"
+                android:src="@drawable/iv_reccom_tag"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:visibility="visible"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/iv_tag_right"/>
+
+        </RelativeLayout>
+
+
+        <com.kuaimeizhuang.fashionmix.view.BaseRecyclerView
+            android:id="@+id/recycler_view_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kmz_ededed"/>
+
+        <ImageView
+            android:id="@+id/iv_data_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kmz_ededed"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/iv_days_select"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_update_data"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textSize="12sp"
+            tools:text="已经是最新的视频~"
+            android:textColor="#ce77e4"
+            android:background="@color/kmz_ededed"
+            android:paddingBottom="6dp"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/image_head"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/loading_head_153_153"
+                app:circleImageUrl="@{post.author.avatar_url}"/>
+
+            <TextView
+                android:id="@+id/tv_publish_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/image_head"
+                android:text="@{post.author.nickname}"
+                android:textColor="@color/kmz_3e3e3e"
+                android:textSize="14sp"
+                tools:text="name"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/iv_eye_number"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(post.views_count)}"
+                    android:textColor="@color/kmz_898989"
+                    android:textSize="12sp"
+                    tools:text="678"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/iv_cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:id="@+id/iv_hot_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#38000000"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{post.title}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="属于你的小心机"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{TimeFormatUtil.newMinuteAndSecond(post.videos[0].duration)}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="2.5"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:src="@drawable/home_frag_icon_time"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{TimeFormatUtil.getStandardDate(post.created_at)}"
+                    android:textColor="@color/kmz_3e3e3e"
+                    android:textSize="12sp"
+                    tools:text="一天前"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_item_divider"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/kmz_f5f9fc"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/kmz_ededed"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="2013/3/3"
+            android:textColor="#909090"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+</layout>

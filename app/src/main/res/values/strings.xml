@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">快美搭</string>
+    <string name="my_message">我的消息</string>
+    <string name="my_like">我喜欢的</string>
+    <string name="my_attention">我的关注</string>
+    <string name="my_feedback">意见反馈</string>
+    <string name="my_share">分享 app 给好友</string>
+    <string name="my_setting">设置</string>
+    <string name="auto_play_setting">视频自动播放</string>
+    <string name="message_push_setting_kuaimeizhuang">消息推送</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="version_updata">版本更新</string>
+    <string name="exit_account">退出当前账号</string>
+    <string name="btn_commit_feedback">提交反馈</string>
+    <string name="tiao">条</string>
+    <string name="child_comment_normal">%1$s:&#160;%2$s</string>
+    <string name="people">人</string>
+
+    <string name="child_comment">%1$s&#160;回复&#160;%2$s:&#160;%3$s</string>
+</resources>
